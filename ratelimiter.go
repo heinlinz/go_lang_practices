@@ -7,9 +7,9 @@ import (
 func NewRateLimiter(limit int) (func(string) bool, func(string)) {
 	counter := make(map[string]int)
 
-	limiter := func(username string) bool {
-		counter[username]++
-		return counter[username] <= limit
+	limiter := func(name string) bool {
+		counter[name]++
+		return counter[name] <= limit
 	}
 
 	reset := func(username string) {
@@ -18,7 +18,6 @@ func NewRateLimiter(limit int) (func(string) bool, func(string)) {
 	}
 
 	return limiter, reset
-
 }
 
 func main() {

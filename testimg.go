@@ -3,7 +3,7 @@ package main
 import "golang.org/x/tour/pic"
 
 func Pic(dx, dy int) [][]uint8 {
-	img := make([][]uint8, dy)
+	image := make([][]uint8, dy)
 	for y := 0; y < dy; y++ {
 		row := make([]uint8, dx)
 
@@ -11,9 +11,9 @@ func Pic(dx, dy int) [][]uint8 {
 			row[x] = uint8(x ^ y)
 		}
 
-		img[y] = row
+		image[y] = row
 	}
-	return img
+	return image
 }
 
 func main() {
